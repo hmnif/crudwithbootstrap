@@ -52,7 +52,7 @@ if (isset($_POST["search"])) {
       </select>
     </div>
     <br>
-    <button type="submit" class="btn btn-primary" name="submit">Tambah</button>
+    <button type="submit" class="btn btn-primary" name="submit"><i class="fa fa-plus"></i> Tambah</button>
   </form>
 </div>
 <hr>
@@ -60,21 +60,7 @@ if (isset($_POST["search"])) {
   <h1>Data Mahasiswa</h1>
   <form action="" class="d-flex" method="POST">
     <input type="text" class="form-control" placeholder="Search" name="cari">
-    <button class="btn btn-primary ms-2" name="search"><i class="fa fa-search"></i></button>
-    <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle ms-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">Sorting </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" <?php if (isset($_GET['nama_mhs']) && $_GET['SORT_ASC'] == "a-z" || "A_Z") {
-                                        echo "selected";
-                                      } ?>>Nama</a></li>
-        <li><a class="dropdown-item" <?php if (isset($_GET['prodi']) && $_GET['SORT_ASC'] == "a-z" || "A_Z") {
-                                        echo "selected";
-                                      } ?>>Prodi</a></li>
-        <li><a class="dropdown-item" <?php if (isset($_GET['ipk']) && $_GET['SORT_ASC'] == "a-z" || "A_Z") {
-                                        echo "selected";
-                                      } ?>>IPK</a></li>
-      </ul>
-    </div>
+    <button class="btn btn-primary ms-2" name="search"><i class="fa fa-search"></i> Cari</button>
   </form>
   <table class="table table-secondary mt-4">
     <thead>
@@ -98,7 +84,7 @@ if (isset($_POST["search"])) {
           <td><?php echo $row['semester']; ?></td>
           <td>
             <a href="edit.php?id_mhs=<?php echo $row['id_mhs']; ?>"><button class="btn btn-warning text-light"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button></a>
-            <a href="delete.php?id_mhs=<?php echo $row['id_mhs']; ?>"><button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</button></a>
+            <a href="delete.php?id_mhs=<?php echo $row['id_mhs']; ?>"><button class="btn btn-danger ms-2"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</button></a>
           </td>
         </tr>
         <?php $no++; ?>

@@ -54,6 +54,6 @@ function edit_mahasiswa($data)
 function cari_mahasiswa($cari)
 {
   global $db;
-  $query = "SELECT * FROM mahasiswa WHERE nama_mhs LIKE '%$cari%' OR prodi LIKE '%$cari%' OR ipk LIKE '%$cari%' OR id_mhs LIKE '%$cari%'";
+  $query = "SELECT * FROM mahasiswa WHERE nama_mhs LIKE '%$cari%' OR prodi LIKE '%$cari%' OR ipk LIKE '%$cari%' OR semester LIKE '%$cari%' OR id_mhs LIKE '%$cari%'";
   return tampil_data($query);
 }

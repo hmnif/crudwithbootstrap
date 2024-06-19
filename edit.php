@@ -3,6 +3,7 @@ include "./function.php";
 
 $id_mhs = $_GET['id_mhs'];
 $mahasiswa = tampil_data("SELECT * FROM mahasiswa WHERE id_mhs = $id_mhs")[0];
+// echo $nama_mhs['nama_mhs'];
 
 if (isset($_POST['submit'])) {
   if (edit_mahasiswa($_POST) > 0) {
@@ -32,20 +33,20 @@ if (isset($_POST['submit'])) {
     <input type="hidden" name="id_mhs" value="<?php echo $mahasiswa['id_mhs']; ?>">
     <div class="mb-3">
       <label for="nama_mhs" class="form-label">Nama Mahasiswa</label>
-      <input type="text" class="form-control" id="nama_mhs" name="nama_mhs" value="<?php echo $nama_mhs['nama_mhs']; ?>">
+      <input type="text" class="form-control" id="nama_mhs" name="nama_mhs" value="<?php echo $mahasiswa['nama_mhs']; ?>">
     </div>
     <div class=" mb-3">
       <label for="prodi" class="form-label">Progragram Studi</label>
-      <input type="text" class="form-control" id="prodi" name="prodi" value="<?php echo $prodi['prodi']; ?>">
+      <input type="text" class="form-control" id="prodi" name="prodi" value="<?php echo $mahasiswa['prodi']; ?>">
     </div>
     <div class="mb-3">
       <label for="ipk" class="form-label">IPK</label>
-      <input type="text" class="form-control" id="ipk" name="ipk" value="<?php echo $ipk['ipk']; ?>">
+      <input type="text" class="form-control" id="ipk" name="ipk" value="<?php echo $mahasiswa['ipk']; ?>">
     </div>
     <div class="mb-3">
       <label for="semester" class="form-label">Semester</label>
-      <select class="form-select" aria-label="Default select example" name="semester" value="<?php echo $semester['semester']; ?>>
-        <option value="" selected>Default</option>
+      <select class="form-select" aria-label="Default select example" name="semester" value="<?php echo $mahasiswa['semester']; ?>>
+        <option value=" selected>Default</option>
         <option value=" 1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
